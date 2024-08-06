@@ -63,18 +63,23 @@ int main(int argc, char **argv)
 
     int result = fd_txn_parse(payload, payload_sz, out_buf, NULL);
 
-    // Log output buffer contents
-    FILE *log_file = fopen("fuzz_log.txt", "a");
-    fprintf(log_file, "Payload: ");
-    fwrite(payload, 1, payload_sz, log_file);
-    fprintf(log_file, "\nResult: %d\n", result);
-    fprintf(log_file, "out_buf contents: ");
-    for (size_t i = 0; i < sizeof(out_buf); i++)
+    // // Log output buffer contents
+    // FILE *log_file = fopen("fuzz_log.txt", "a");
+    // fprintf(log_file, "Payload: ");
+    // fwrite(payload, 1, payload_sz, log_file);
+    // fprintf(log_file, "\nResult: %d\n", result);
+    // fprintf(log_file, "out_buf contents: ");
+    // for (size_t i = 0; i < sizeof(out_buf); i++)
+    // {
+    //     fprintf(log_file, "%02x ", out_buf[i]);
+    // }
+    // fprintf(log_file, "\n\n");
+    // fclose(log_file);
+
+    if (result == 0)
     {
-        fprintf(log_file, "%02x ", out_buf[i]);
+        abort();
     }
-    fprintf(log_file, "\n\n");
-    fclose(log_file);
 
     fd_rng_delete(fd_rng_leave(rng));
 

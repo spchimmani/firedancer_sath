@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     // fprintf(log_file, "\n\n");
     // fclose(log_file);
 
-    if (result == 0 && payload[0] != 'a')
+    if (result == 0 && payload_sz > 5)
     {
         abort();
     }

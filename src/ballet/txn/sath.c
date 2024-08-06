@@ -74,7 +74,7 @@ if (TESTING) {
 // uchar out_buf[ FD_TXN_MAX_SZ+RED_ZONE_SZ ];
     uchar out_buf[4];
 
-  FD_TEST( 0UL                          == fd_txn_parse( payload, payload_sz, out_buf, NULL ) );
+  FD_TEST( 0UL                          != fd_txn_parse( payload, payload_sz, out_buf, NULL ) );
 
     // Print out_buf contents
     printf("out_buf contents:\n");

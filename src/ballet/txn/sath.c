@@ -26,7 +26,7 @@ main( int     argc,
         return 1;
     }
 
-int TESTING = 0;
+int TESTING = 1;
 
 if (TESTING) {
 // Open the payload file
@@ -54,21 +54,21 @@ if (TESTING) {
     fclose(file);
 }
 
-    // Get payload from argv[1]
-    uchar const *payload = (uchar const *)argv[1];
-    ulong payload_sz = strlen((char *)payload);
+    // // Get payload from argv[1]
+    // uchar const *payload = (uchar const *)argv[1];
+    // ulong payload_sz = strlen((char *)payload);
 
-    // Print the payload size
-    printf("Payload size: %ld bytes\n", payload_sz);
+    // // Print the payload size
+    // printf("Payload size: %ld bytes\n", payload_sz);
 
-        // Print the payload contents
-    printf("Payload contents:\n");
-    // for (long i = 0; i < payload_sz; i++) {
-    //     printf("%02x ", payload[i]);
-    // }
-        fwrite(payload, 1, payload_sz, stdout);
+    //     // Print the payload contents
+    // printf("Payload contents:\n");
+    // // for (long i = 0; i < payload_sz; i++) {
+    // //     printf("%02x ", payload[i]);
+    // // }
+    //     fwrite(payload, 1, payload_sz, stdout);
 
-    printf("\n");
+    // printf("\n");
 
 
 // uchar out_buf[ FD_TXN_MAX_SZ+RED_ZONE_SZ ];

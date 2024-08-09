@@ -47,7 +47,7 @@ int main(int argc,
         fseek(file, 0, SEEK_SET);
 
         // Allocate buffer for the payload
-        *payload = (uchar *)malloc(payload_sz);
+        payload = (uchar *)malloc(payload_sz);
         if (!payload)
         {
             perror("malloc");

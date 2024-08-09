@@ -76,8 +76,8 @@ int main(int argc,
 
     printf("\n");
 
-    // uchar out_buf[ FD_TXN_MAX_SZ+RED_ZONE_SZ ];
-    uchar out_buf[4];
+    uchar out_buf[ FD_TXN_MAX_SZ+RED_ZONE_SZ ];
+    // uchar out_buf[4];
 
     FD_TEST(0UL == fd_txn_parse(payload, payload_sz, out_buf, NULL));
 

@@ -27,9 +27,10 @@ main( int     argc,
     }
 
 int TESTING = 1;
-
-if (TESTING) {
-// Open the payload file
+long payload_sz;
+if (TESTING)
+{
+    // Open the payload file
     FILE *file = fopen(argv[1], "rb");
     if (!file) {
         perror("fopen");
@@ -38,7 +39,7 @@ if (TESTING) {
 
  // Determine the file size
     fseek(file, 0, SEEK_END);
-    long payload_sz = ftell(file);
+    payload_sz = ftell(file);
     fseek(file, 0, SEEK_SET);
 
  // Allocate buffer for the payload

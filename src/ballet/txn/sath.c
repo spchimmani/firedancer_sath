@@ -64,22 +64,22 @@ int main(int argc,
     // uchar const *payload = (uchar const *)argv[1];
     // ulong payload_sz = strlen((char *)payload);
 
-    // // Print the payload size
-    // printf("Payload size: %ld bytes\n", payload_sz);
+    // Print the payload size
+    printf("Payload size: %ld bytes\n", payload_sz);
 
-    //     // Print the payload contents
-    // printf("Payload contents:\n");
-    // // for (long i = 0; i < payload_sz; i++) {
-    // //     printf("%02x ", payload[i]);
-    // // }
-    //     fwrite(payload, 1, payload_sz, stdout);
+        // Print the payload contents
+    printf("Payload contents:\n");
+    // for (long i = 0; i < payload_sz; i++) {
+    //     printf("%02x ", payload[i]);
+    // }
+        fwrite(payload, 1, payload_sz, stdout);
 
-    // printf("\n");
+    printf("\n");
 
     // uchar out_buf[ FD_TXN_MAX_SZ+RED_ZONE_SZ ];
     uchar out_buf[4];
 
-    FD_TEST(0UL != fd_txn_parse(payload, payload_sz, out_buf, NULL));
+    FD_TEST(0UL == fd_txn_parse(payload, payload_sz, out_buf, NULL));
 
     // Print out_buf contents
     printf("out_buf contents:\n");

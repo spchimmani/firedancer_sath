@@ -54,7 +54,7 @@ fd_txn_parse_core( uchar const             * payload,
         counters_opt->failure_ring[ ( counters_opt->failure_cnt++ )%FD_TXN_PARSE_COUNTERS_RING_SZ ] = __LINE__; \
       }                                                                                                         \
       return 0UL;                                                                                               \
-    }                                                                                                           \
+    }else FD_LOG_NOTICE(("CHECK PASSED\n"));
   } while( 0 )
   /* CHECK that it is safe to read at least n more bytes assuming i is
      the current location. n is untrusted and could trigger overflow, so
